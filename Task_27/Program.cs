@@ -25,17 +25,14 @@
 // Console.Write($"Сумма цифр числа {num} равна: {SumDigitOfNumber(num)}");
 
 // Вариант 2. Через преобразование числа в массив цифр
-int SumDigitOfNumber2(string number)
+int SumDigitOfNumber2(string number) // преобразует в массив и выдает сумму
 {
     int[] arr = new int[number.Length];
-    for (int i = 0; i < number.Length; i++) // преобразует строку в массив цифр
+    int sum = 0;
+    for (int i = 0; i < number.Length; i++)
     {
         arr[i] = int.Parse(number[i].ToString());
-    }
-    int sum = 0;
-    for (int k = 0; k < arr.Length; k++) // считает сумму элементов массива
-    {
-        sum = sum + arr[k];
+        sum = sum + arr[i];
     }
     return sum;
 }
@@ -49,4 +46,3 @@ string Prompt(string text)
 string num = Prompt("Введите число: ");
 int sumValue = SumDigitOfNumber2(num);
 Console.Write($"Сумма цифр числа {num} равна: {sumValue}");
-
